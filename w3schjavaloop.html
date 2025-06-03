@@ -1,0 +1,291 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        hr {
+            border: solid white;
+        }
+
+        div {
+            background: blanchedalmond;
+            padding: 10px 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Javascript Output -->
+    <div>
+        <h1>Belajar Javascript output</h1>
+        <p id="output-1" style="color: brown;"></p>
+        <p id="output-2"></p>
+    </div>
+
+    <!-- Javascript Statement -->
+    <div>
+        <h1>Javascript Statement</h1>
+        <i>anggap x=2 (penggunaan const)</i>
+        <br>
+        <input type="number" id="statement-1" oninput="inputAngka()">
+        <br>
+        <strong id="hasil"></strong>
+    </div>
+
+    <!-- Javascript Syntax -->
+    <div>
+        <p id="nama"></p>
+        <p id="nama1"></p> angka 3 di outputkan pakai const
+    </div>
+
+    <!-- Javscript Math -->
+    <div>
+        <p>Masukkan angka yang diinginkan</p>
+        <p>Masukkab angka pertama :</p>
+        <input type="number" id="angka1">
+        <p>Masukkan angka kedua :</p>
+        <input type="number" id="angka2">
+        <br>
+        <button onclick="tambah()">Tambah</button>
+        <button onclick="kurang()">Kurang</button>
+        <button onclick="kali()">Kali</button>
+        <button onclick="bagi()">Bagi</button>
+        <br>
+        <em>Hasilnya = 
+            <span id="hasil2"> </span>
+            <span id="hasil3"> </span>
+            <span id="hasil4"> </span>
+            <span id="hasil5"> </span>
+        </em>
+    </div>
+
+    <!-- Javascript Object -->
+    <div>
+        <p>Javascript Object</p>
+        <p>Masukkan nama depan Anda :</p>
+        <input type="text" id="nama-depan">
+        <p>Masukkan nama Belakang Anda :</p>
+        <input type="text" id="nama-belakang">
+        <br>
+        <button onclick="namaLengkap()">Tampil</button>
+        <br>
+        <em>Nama Lengkap : <span id="nama-lengkap"></span></em>
+    </div>
+
+    <!-- Javascript Event -->
+    <div>
+        <p>Event bisa dibilang untuk menangani aksi user</p>
+        <p>Contoh nih button lampu</p>
+        <button onclick="tanggalBro()">Tanggal Berapa euy sekarang?</button>>
+        <p id="tanggal"></p>
+    </div>
+
+    <div>
+        <p>Contoh penggunaan salah satu string</p>
+        <p>Masukkan kata apapun pakai huruf besar</p>
+        <input type="text" onkeyup="outputkecil()" id="inputbesar">
+
+        <p id="outputhasilkecil"></p>
+    </div>
+
+    <div>
+        <p>Contoh Comparison</p>
+        <p>Misalnya x = 10, tapi di javascript kita tulis x == 8, maka hasilnya :</p>
+        <p id="hcom"></p>
+    </div>
+
+    <div>
+        <p>For loop</p>
+        <p id="loop1"></p>
+    </div>
+
+    <div>
+        <p>For in, yakni ambil data dari key nya</p>
+        <p>contoh tampiin data array {nama:"Berlin", umur:19}</p>
+        <br>
+        <p id="forin"></p>
+    </div>
+
+    <div>
+        <p>For of, yakni ambil data isinya</p>
+        <p>Contoh ambil data dari array nama buah, conts buah = {"pisang",
+            "apel","jeruk"};
+        </p>
+        <br>
+        <p id="forof"></p>
+    </div>
+
+    <div>
+        <p>For Loop While</p>
+        <p>Contoh penyesalan 10x pakai loop while</p>
+        <p id="loopwhile"></p>
+    </div>
+
+</body>
+
+
+
+
+
+
+
+<script>
+    // Javascript contoh 1 output 
+    document.getElementById("output-1").innerHTML = "Text ini dikeluarkan oleh javascript tapi paragraf";
+    document.getElementById("output-2").innerHTML = "<h2>Text ini juga hanya saja dimodif yakni jadi h2</h2>";
+
+    // Javascript contoh 2 percabangan
+    const x=2;
+    function inputAngka() {
+        const input = document.getElementById("statement-1").value;
+        const hasil = document.getElementById("hasil");
+
+        if (input>x) {
+            hasil.textContent = ("Angka lebih BESAR dari x");
+        } else if (input==x) {
+            hasil.textContent = ("Angka sama dengan x");
+        } else {
+            hasil.textContent = ("Angka lebih KECIL dari x");
+        }
+    }
+    
+    // Javascript contoh 3 let
+    let nama = "Text yang memakaki atribut let"
+    document.getElementById("nama").innerText = nama;
+
+    const nama1 = 3
+    document.getElementById("nama1").innerHTML = nama1;
+
+    // Javascript contoh 4 penambahan
+    function tambah() {
+        let a = document.getElementById("angka1").value;
+        let b = document.getElementById("angka2").value;
+
+        a = Number(a);
+        b = Number(b);
+
+        let hasilPenjumlahan = a + b;
+
+        document.getElementById("hasil2").textContent = hasilPenjumlahan;
+        document.getElementById("hasil3").textContent = " ";
+        document.getElementById("hasil4").textContent = " ";
+        document.getElementById("hasil5").textContent = " ";
+    }
+
+    function kurang() {
+        let a = document.getElementById("angka1").value;
+        let b = document.getElementById("angka2").value;
+
+        a = Number(a);
+        b = Number(b);
+
+        let hasilPengurangan = a - b;
+        document.getElementById("hasil3").textContent = hasilPengurangan;
+        document.getElementById("hasil2").textContent = " ";
+        document.getElementById("hasil4").textContent = " ";
+        document.getElementById("hasil5").textContent = " ";
+
+    }
+
+    function kali () {
+        let a = document.getElementById("angka1").value;
+        let b = document.getElementById("angka2").value;
+
+        a = Number(a);
+        b = Number(b);
+
+        let hasilKali = a * b;
+        document.getElementById("hasil5").textContent = hasilKali;
+        document.getElementById("hasil2").textContent = " ";
+        document.getElementById("hasil3").textContent = " ";
+        document.getElementById("hasil4").textContent = " ";
+    }
+
+    function bagi() {
+        let a = document.getElementById("angka1").value;
+        let b = document.getElementById("angka2").value;
+
+        a = Number(a);
+        b = Number(b);
+
+        let hasilBagi = a / b;
+        document.getElementById("hasil4").textContent = hasilBagi;
+        document.getElementById("hasil2").textContent = " ";
+        document.getElementById("hasil3").textContent = " ";
+        document.getElementById("hasil5").textContent = " ";
+    }
+
+    // Javascript Object
+    function namaLengkap() {
+        let depan = document.getElementById("nama-depan").value;
+        let belakang = document.getElementById("nama-belakang").value;
+
+        let nlengkap = depan + " " + belakang;
+        document.getElementById("nama-lengkap").innerHTML = nlengkap;
+    }
+
+    // Javascript Event
+    function tanggalBro() {
+        document.getElementById("tanggal").innerHTML = new Date();
+    }
+
+    function outputkecil() {
+        let a = document.getElementById("inputbesar").value;
+        document.getElementById("outputhasilkecil").innerHTML = a.toLowerCase();
+    }
+
+    // Javascript Comparison
+    let a = 10;
+    document.getElementById("hcom").innerHTML = (a == 8);
+
+    // for loop
+
+    let loop = " ";
+    for (i = 0; i < 7; i++) {
+        loop += i + "<br>";
+    }
+    document.getElementById("loop1").innerHTML = loop;
+</script>
+
+
+<!-- Loop In -->
+<script>
+    const aku = {nama:"Berlin", umur:19};
+
+    let text = "";
+    for (let key in aku) {
+        text += aku[key] + " ";
+    }
+    document.getElementById("forin").innerHTML = text;
+</script>
+
+<!-- Loop For of -->
+<script>
+    const buah = ["pisang", "apel", "jeruk"];
+
+    let text2 = "";
+    for (let x of buah) {
+        text2 += x+ "<br>";
+    }
+    document.getElementById("forof").innerHTML = text2;
+</script>
+
+<!-- Loop While -->
+<script>
+    let text3 = "";
+    let i = 0;
+    while (i < 10) {
+        text3 += "<br>Nyesal gua ke " + i;
+        i++;
+    }
+
+    document.getElementById("loopwhile").innerHTML = text3;
+</script>
+</html>                     

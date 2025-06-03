@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body-btn">
+    <input type="text" id="nama" onkeyup="tampilDataDiv()">
+    <button type="button" onclick="munculButton()" id="btn_tampil">Tampil</button>
+    <div id="tampil_data"></div>
+    <br><br>
+    <button value="pink" type="button" onclick="ubahWarnaButton(this.value)">Pink</button>
+    <button value="orange" type="button" onclick="ubahWarnaButton(this.value)">Orange</button>
+    <button value="yellow" type="button" onclick="ubahWarnaButton(this.value)">Yellow</button>
+    <button value="aqua" type="button" onclick="ubahWarnaButton(this.value)">Aqua</button>
+    <button value="brown" type="button" onclick="ubahWarnaButton(this.value)">Brown</button>
+    <button value="black" type="button" onclick="ubahWarnaButton(this.value)">Black</button>
+    <button value="white" type="button" onclick="ubahWarnaButton(this.value)">White</button>
+    <button value="blue" type="button" onclick="ubahWarnaButton(this.value)">Blue</button>
+    <button value="green" type="button" onclick="ubahWarnaButton(this.value)">Green</button>
+    <button value="purple" type="button" onclick="ubahWarnaButton(this.value)">Purple</button>
+    <br><br>
+
+    <p>Untuk ubah warn background</p>
+    <button value="pink" type="button" onclick="ubahWarnaBack(this.value)">Pink</button>
+    <button value="orange" type="button" onclick="ubahWarnaBack(this.value)">Orange</button>
+    <button value="yellow" type="button" onclick="ubahWarnaBack(this.value)">Yellow</button>
+    <button value="aqua" type="button" onclick="ubahWarnaBack(this.value)">Aqua</button>
+    <button value="brown" type="button" onclick="ubahWarnaBack(this.value)">Brown</button>
+    <button value="black" type="button" onclick="ubahWarnaBack(this.value)">Black</button>
+    <button value="white" type="button" onclick="ubahWarnaBack(this.value)">White</button>
+    <button value="blue" type="button" onclick="ubahWarnaBack(this.value)">Blue</button>
+    <button value="green" type="button" onclick="ubahWarnaBack(this.value)">Green</button>
+    <button value="purple" type="button" onclick="ubahWarnaBack(this.value)">Purple</button>
+
+    <br><br>
+
+    <input type="checkbox" id="checkbox_1" onclick="munculButton(this.checked)"> muncul button
+    <button type="button" id="btn_tambahan" style="display: none;">baru muncul</button>
+</body>
+
+<script>
+    function stefany() {
+        var nm = document.getElementById("nama").value;
+        alert("hallo, "+nm);
+    }
+
+    function ubahWarnaButton(warna) {
+        document.getElementById("btn_tampil").style.backgroundColor = warna;
+    }
+
+    function tampilDataDiv() {
+        var data = document.getElementById("nama").value;
+        document.getElementById("tampil_data").innerHTML = data;
+    }
+
+    function ubahWarnaBack(body) {
+        document.getElementById("body-btn").style.background = body;
+    }
+
+    function munculButton() {
+        if(status == true) {
+            document.getElementById("btn_tambahan").style.display = "inline";
+        } else {
+            document.getElementById("btn_tambahan").style.display = "none";
+        }
+    }
+</script>
+</html>
